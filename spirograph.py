@@ -49,7 +49,7 @@ class SpiralDisplay(Display):
 
 
 def main():
-    display = SpiralDisplay(step_delay=5)
+    display = SpiralDisplay(step_delay=1)
     display.run()
 
     display.screen.mainloop()
