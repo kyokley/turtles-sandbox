@@ -22,11 +22,13 @@ class Tortoise:
                      random.randint(0, 255))
 
         self._turtle = py_turtle.Turtle()
+        self._turtle.hideturtle()
         self._turtle.penup()
         self._turtle.color(color)
         self._turtle.setposition(x, y)
         self._turtle.setheading(heading)
         self._turtle.pendown()
+        self._turtle.showturtle()
 
         self._display = display
         self.shape = shape

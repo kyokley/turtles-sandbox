@@ -1,4 +1,5 @@
 import random
+import turtle as py_turtle
 from pathlib import Path
 from tortoise import Tortoise
 from utils import Display
@@ -15,21 +16,49 @@ class RaceTortoise(Tortoise):
         self._turtle.forward(dist)
 
     def is_finished(self):
-        return self.xcor() > 288
+        if self.xcor() > 288:
+            if not self.done:
+                self.place_tortoise.write(self._display.get_place())
+                self.done = True
+            return True
+        else:
+            return False
 
     def setup(self):
         self.penup()
+        self.place_tortoise = PlaceTortoise(x=320, y=self.ycor() - 8)
+        self.done = False
+
+
+class PlaceTortoise:
+    def __init__(self, x=0, y=0):
+        self._turtle = py_turtle.Turtle()
+        self._turtle.hideturtle()
+        self._turtle.penup()
+        self._turtle.setposition(x, y)
+
+    def write(self, text):
+        self._turtle.write(text,
+                           move=False,
+                           font=('Arial', 12, 'normal'))
 
 
 class RaceDisplay(Display):
     def setup(self):
+        self.current_place = 0
         self.screen.bgpic(picname=str(TRACK_PATH))
+        self.screen.title('The Great Race!')
         self.turtles = [RaceTortoise(x=-286,
-                                     y=-26 + 15 * i,
-                                     heading=0)
+                                     y=-40 + 20 * i,
+                                     heading=0,
+                                     display=self)
                         for i in range(NUMBER_OF_TURTLES)]
         self._count_down = 5
         self.countdown()
+
+    def get_place(self):
+        self.current_place += 1
+        return self.current_place
 
     def run(self):
         self.setup()
@@ -55,6 +84,10 @@ class RaceDisplay(Display):
 
         if not self.turtles:
             self.shutdown()
+
+    def shutdown(self):
+        super().shutdown()
+        self.screen.title('All Done!')
 
 
 def main():
