@@ -1,0 +1,96 @@
+<!doctype html>
+<html>
+    <head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<title>reveal.js</title>
+
+	<link rel="stylesheet" href="dist/reset.css">
+	<link rel="stylesheet" href="dist/reveal.css">
+	<link rel="stylesheet" href="dist/theme/black.css">
+
+	<!-- Theme used for syntax highlighted code -->
+	<link rel="stylesheet" href="plugin/highlight/monokai.css">
+    </head>
+    <body>
+	<div class="reveal">
+	    <div class="slides">
+		<section>
+		    <h3>Hello World</h3>
+		    A brief introduction to Software Engineering
+		</section>
+		<section>
+		    <h3>What is Software Engineering?</h3>
+		    <p class="fragment">Software engineering is the systematic application of engineering approaches to the development of software.</p>
+		</section>
+		<section data-background-image="https://media.giphy.com/media/l0HlI6NdcrtkV5C7e/giphy.gif">
+		    What does that look like?
+		    <p class="fragment">
+		    What does that even mean???
+		    </p>
+		</section>
+		<section data-background-video="https://thumbs.gfycat.com/ExaltedAccomplishedHornedtoad-mobile.mp4" data-background-size="100px" data-background-video-loop=true>
+		    I write code!
+		</section>
+		<section data-background-image="assets/turtle_code.png" data-background-size="contain">
+		    Okay... things usually look more like this
+		    <aside class="notes">
+			Code is just a way of passing instructions to a computer. Kind of like a recipe.
+		    </aside>
+		</section>
+		<section>
+		    <h3>Things running code</h3>
+		    <p class="fragment">Basically any electronic device you can think of...</p>
+		    <ul>
+			<li class="fragment">Computers</li>
+			<li class="fragment">Cellphones</li>
+			<li class="fragment">Smartwatches</li>
+			<li class="fragment">Video Games</li>
+			<li class="fragment">Trains, Planes, Automobiles</li>
+			<li class="fragment">TVs, Dishwashers, Refrigerators</li>
+			<li class="fragment">Even some lightbulbs and wall switches</li>
+		    </ul>
+		    <aside class="notes">
+			With all of these devices out there, someone has to support them all. The world will always need more software engineers,
+		    </aside>
+		</section>
+		<section>
+		    <h3>Necessary Skills</h3>
+		</section>
+		<section data-background-image="https://media.giphy.com/media/df0cUZrXQ8jt3HpoTK/giphy.gif">
+		    Focus
+		</section>
+		<section data-background-image="https://media.giphy.com/media/UxREcFThpSEqk/giphy.gif">
+		    Patience
+		</section>
+		<section data-background-image="https://media.giphy.com/media/vWU2MbMzQ1eTu/giphy.gif" data-background-size="contain">
+		    Love of solving puzzles
+		</section>
+		<section>
+		    <h3>What's the best part of Software Engineering?</h3>
+		</section>
+		<section data-background-image="https://media.giphy.com/media/3ZALZoBtI1KJa/giphy-downsized-large.gif" data-background-size="contain">
+		    <h2>Anything is possible</h2>
+		</section>
+	</div>
+
+	<script src="dist/reveal.js"></script>
+	<script src="plugin/notes/notes.js"></script>
+	<script src="plugin/markdown/markdown.js"></script>
+	<script src="plugin/highlight/highlight.js"></script>
+	<script>
+	    // More info about initialization & config:
+	    // - https://revealjs.com/initialization/
+	    // - https://revealjs.com/config/
+	    Reveal.initialize({
+			    hash: true,
+
+			    // Learn about plugins: https://revealjs.com/plugins/
+			    plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+			});
+	</script>
+	<script src="socket.io/socket.io.js"></script>
+	<script src="node_modules/reveal-notes-server/client.js"></script>
+    </body>
+</html>
